@@ -46,7 +46,7 @@ jobs:
             build 2>&1 | tee build.log
 
       - name: Verify iOS 16 observation metadata in release executable
-        run: node checks/native/check-reflection.mjs build/Release-iphoneos/SIFUIOS.app/roboios
+        run: node checks/native/check-reflection.mjs build/Release-iphoneos/SIFUIOS.app/SIFUIOS
 
       - name: Package unsigned IPA
         shell: bash
