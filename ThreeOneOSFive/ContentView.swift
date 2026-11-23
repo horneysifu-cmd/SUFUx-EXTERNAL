@@ -251,7 +251,7 @@ struct ContentView: View {
             .frame(maxWidth: .infinity)
             .frame(height: 180)
             .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-            .accessibilityLabel("ROBO banner")
+            .accessibilityLabel("SIFU IOS banner")
     }
 
 
