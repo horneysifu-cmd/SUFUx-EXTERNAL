@@ -1,0 +1,263 @@
+import SwiftUI
+import UIKit
+
+@main
+struct RoboIOSApp: App {
+    @StateObject private var appState = AppState()
+    @StateObject private var patchStore = PatchProjectStore()
+    @StateObject private var licenseSession = LicenseSessionController()
+    @StateObject private var contentUpdates = ContentUpdateController()
+    @Environment(\.scenePhase) private var scenePhase
+    @AppStorage(AppTheme.accentStorageKey) private var accentHex = AppTheme.defaultAccentHex
+    @AppStorage(AppLanguage.storageKey) private var languageCode = AppLanguage.english.rawValue
+    @AppStorage(AppTheme.streamerModeStorageKey) private var streamerMode = false
+    @AppStorage(AppTheme.appearanceStorageKey) private var appearance = AppTheme.defaultAppearance
+    @AppStorage("robo.calculator.enabled") private var calculatorModeEnabled = false
+    @StateObject private var captureMonitor = ScreenCaptureMonitor()
+
+    init() {
+        setupLogCapture()
+        let iosMajor = ProcessInfo.processInfo.operatingSystemVersion.majorVersion
+        if iosMajor >= 17 {
+            gx_harden_process()
+        }
+        do {
+            _ = try RuntimeMaterial.reveal()
+        } catch {
+            log("app: runtime material unavailable — continuing on iOS \(AppInfo.osVersion)")
+            if iosMajor >= 17 {
+                RuntimeGuard.seal()
+            }
+        }
+        if iosMajor >= 17 {
+            BundledFunctionCatalog.removeFactorySeedIfNeeded()
+            RuntimeGuard.inspectLaunch()
+        }
+        log("app: ROBO iOS launching")
+    }
+
+    var body: some Scene {
+        WindowGroup {
+            ZStack {
+                Group {
+                    if calculatorModeEnabled {
+                        CalculatorLaunchGateView()
+                    } else {
+                        LicenseGateView()
+                    }
+                }
+                    .environmentObject(appState)
+                    .environmentObject(patchStore)
+                    .environmentObject(licenseSession)
+                    .environmentObject(contentUpdates)
+                    .onAppear { patchStore.reload() }
+                    .environment(\.appLanguage, AppLanguage(rawValue: languageCode) ?? .english)
+                    .environment(\.locale, (AppLanguage(rawValue: languageCode) ?? .english).locale)
+                    .id("\(languageCode)-\(accentHex)-\(streamerMode)-\(appearance)-\(calculatorModeEnabled)")
+
+                if streamerMode && captureMonitor.isCaptured {
+                    StreamerPrivacyOverlay(snapshot: captureMonitor.snapshot)
+                        .environment(\.appLanguage, AppLanguage(rawValue: languageCode) ?? .english)
+                        .environment(\.locale, (AppLanguage(rawValue: languageCode) ?? .english).locale)
+                        .zIndex(10)
+                        .allowsHitTesting(false)
+                }
+            }
+            .preferredColorScheme(appearance == "light" ? .light : .dark)
+                .onChange(of: licenseSession.state) { state in
+                    if state == .authenticated, licenseSession.hasLiveAuthority {
+                        appState.detectSupport()
+                    }
+                }
+                .onChange(of: scenePhase) { phase in
+                    if phase == .active {
+                        Task {
+                            await licenseSession.sceneBecameActive()
+                            if licenseSession.state == .authenticated,
+                               licenseSession.hasLiveAuthority {
+                                appState.detectSupport()
+                            }
+                        }
+                    }
+                }
+        }
+    }
+}
+
+final class ScreenCaptureMonitor: ObservableObject {
+    @Published private(set) var isCaptured = UIScreen.main.isCaptured
+    @Published private(set) var snapshot: UIImage?
+    private var captureObserver: NSObjectProtocol?
+
+    init() {
+        captureObserver = NotificationCenter.default.addObserver(
+            forName: UIScreen.capturedDidChangeNotification,
+            object: nil,
+            queue: .main
+        ) { [weak self] _ in
+            guard let self else { return }
+            let captured = UIScreen.main.isCaptured
+            self.isCaptured = captured
+
+            guard captured else {
+                self.snapshot = nil
+                return
+            }
+
+            DispatchQueue.main.async {
+                self.snapshot = self.captureWindowImage()
+            }
+        }
+    }
+
+    private func captureWindowImage() -> UIImage? {
+        guard let scene = UIApplication.shared.connectedScenes
+            .compactMap({ $0 as? UIWindowScene })
+            .first(where: { $0.activationState == .foregroundActive }),
+              let window = scene.windows.first(where: { $0.isKeyWindow }) else {
+            return nil
+        }
+
+        let bounds = window.bounds
+        guard bounds.width > 0, bounds.height > 0 else { return nil }
+
+        let format = UIGraphicsImageRendererFormat()
+        format.scale = window.screen.scale
+        format.opaque = true
+
+        return UIGraphicsImageRenderer(bounds: bounds, format: format).image { _ in
+            window.drawHierarchy(in: bounds, afterScreenUpdates: false)
+        }
+    }
+
+    deinit {
+        if let captureObserver {
+            NotificationCenter.default.removeObserver(captureObserver)
+        }
+    }
+}
+
+class AppState: ObservableObject {
+    @Published var exploitStatus: ExploitStatus = .notStarted
+    @Published var unsupportedMessage: String?
+    @Published var kernelExploitRunning = false
+
+    private var autoRunAttempted = false
+
+    var kernelExploitApplicable: Bool {
+        KernelExploit.isApplicable(
+            major: AppInfo.versionTuple.major,
+            minor: AppInfo.versionTuple.minor,
+            patch: AppInfo.versionTuple.patch,
+            build: AppInfo.osBuild
+        )
+    }
+
+    var isSupported: Bool { unsupportedMessage == nil }
+
+    var featureLevel: ExploitSupportPolicy.FeatureLevel {
+        let v = AppInfo.versionTuple
+        return ExploitSupportPolicy.featureLevel(
+            major: v.major,
+            minor: v.minor,
+            patch: v.patch,
+            build: AppInfo.osBuild
+        )
+    }
+
+    var targetContainerAccessAvailable: Bool {
+        if kernelExploitApplicable {
+            return exploitStatus.isSuccess
+        }
+        return false
+    }
+
+    func detectSupport() {
+        let v = AppInfo.versionTuple
+        let supported = ExploitSupportPolicy.isSupported(
+            major: v.major,
+            minor: v.minor,
+            patch: v.patch,
+            build: AppInfo.osBuild
+        )
+#if targetEnvironment(simulator)
+        if ProcessInfo.processInfo.arguments.contains("--simulate-access") {
+            exploitStatus = .success(method: "Simulator preview")
+        }
+#endif
+
+        unsupportedMessage = supported ? nil : "iOS \(AppInfo.osVersion) (\(AppInfo.osBuild))"
+        if let unsupportedMessage {
+            exploitStatus = .unsupported(unsupportedMessage)
+            return
+        }
+
+        let applicable = KernelExploit.isApplicable(
+            major: v.major,
+            minor: v.minor,
+            patch: v.patch,
+            build: AppInfo.osBuild
+        )
+        guard applicable else {
+            log("app: UI supported; target-container access is not verified for iOS (AppInfo.osVersion) ((AppInfo.osBuild))")
+            return
+        }
+
+        refreshKernelExploitStatus()
+        maybeAutoRunKernelExploit()
+    }
+
+    private func maybeAutoRunKernelExploit() {
+        guard !kernelExploitRunning,
+              !exploitStatus.isSuccess,
+              !exploitStatus.isFailed,
+              !autoRunAttempted else { return }
+        autoRunAttempted = true
+        log("app: starting kernel exploit automatically")
+        runKernelExploitIfNeeded()
+    }
+
+    private func refreshKernelExploitStatus() {
+        guard !kernelExploitRunning else { return }
+
+        // iOS < 26: kernel R/W success persists (no sandbox probe)
+        // iOS >= 26: verify full sandbox escape is still active
+        if KernelExploit.requiresSandboxEscape {
+            if KernelExploit.hasSandboxAccess() {
+                if !exploitStatus.isSuccess {
+                    exploitStatus = .success(method: "kexploit")
+                    log("app: existing sandbox access is still active; skipping kernel exploit")
+                }
+            } else if exploitStatus.isSuccess {
+                exploitStatus = .notStarted
+                log("app: sandbox access is no longer active")
+            }
+        }
+    }
+
+    func runKernelExploitIfNeeded() {
+        refreshKernelExploitStatus()
+        guard !kernelExploitRunning,
+              !exploitStatus.isSuccess else { return }
+        kernelExploitRunning = true
+        exploitStatus = .notStarted
+        log("app: running kernel exploit on background...")
+        DispatchQueue.global(qos: .userInitiated).async {
+            let ok = KernelExploit.run()
+            DispatchQueue.main.async {
+                self.kernelExploitRunning = false
+                if ok {
+                    self.exploitStatus = .success(method: "kexploit")
+                    if KernelExploit.requiresSandboxEscape {
+                        log("app: kernel exploit success — sandbox access verified")
+                    } else {
+                        log("app: kernel exploit success — kernel access active")
+                    }
+                } else {
+                    self.exploitStatus = .failed(method: "kexploit", code: -1)
+                    log("app: kernel exploit failed — relaunch the app before retrying")
+                }
+            }
+        }
+    }
+}
