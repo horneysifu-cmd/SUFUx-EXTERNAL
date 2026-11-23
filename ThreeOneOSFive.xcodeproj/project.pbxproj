@@ -100,7 +100,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3105A010 /* roboios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "roboios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3105A010 /* SIFUIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SIFUIOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3105A020 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		3105A021 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3105A023 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -255,7 +255,7 @@
 		3105A402 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3105A010 /* roboios.app */,
+				3105A010 /* SIFUIOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -386,7 +386,7 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3105A500 /* roboios */ = {
+		3105A500 /* SIFUIOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3105A600;
 			buildPhases = (
@@ -399,8 +399,8 @@
 			);
 			dependencies = (
 			);
-			name = roboios;
-			productName = roboios;
+			name = SIFUIOS;
+			productName = SIFUIOS;
 			productReference = 3105A010;
 			productType = "com.apple.product-type.application";
 		};
@@ -596,7 +596,7 @@
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.mobile.MobileHouseArrest";
-				PRODUCT_NAME = roboios;
+				PRODUCT_NAME = SIFUIOS;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "ThreeOneOSFive/ThreeOneOSFive-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -630,7 +630,7 @@
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.mobile.MobileHouseArrest";
-				PRODUCT_NAME = roboios;
+				PRODUCT_NAME = SIFUIOS;
 				COPY_PHASE_STRIP = YES;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				STRIP_INSTALLED_PRODUCT = YES;
@@ -765,7 +765,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3105A600 /* Build configuration list for PBXNativeTarget "roboios" */ = {
+		3105A600 /* Build configuration list for PBXNativeTarget "SIFUIOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3105A601 /* Debug */,
