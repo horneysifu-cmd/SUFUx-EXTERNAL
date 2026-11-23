@@ -85,7 +85,7 @@ final class LicenseSessionController: ObservableObject {
 
     func loginNotice() async -> (message: String, url: URL)? {
         let fallbackMessage = "Stay connected and get the latest updates, news, and announcements right on your bot!"
-        guard let fallbackURL = URL(string: "https://t.me/roboiosbot") else { return nil }
+        guard let fallbackURL = URL(string: "https://t.me/sifuGLOBAL") else { return nil }
         for _ in 0..<40 where api == nil {
             if case .loading = state {
                 try? await Task.sleep(nanoseconds: 100_000_000)
