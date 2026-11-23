@@ -202,7 +202,7 @@ struct VitaTitleWordmark: View {
             }
         }
         .frame(maxWidth: maxWidth, alignment: alignment)
-        .accessibilityLabel("ROBO X LEE. Play beyond limits.")
+        .accessibilityLabel("SIFU IOS. Play beyond limits.")
     }
 }
 
@@ -750,7 +750,7 @@ struct StreamerPrivacyOverlay: View {
                     .font(.system(size: 48, weight: .semibold))
                     .foregroundStyle(AppTheme.accent)
 
-                Text("ROBO X LEE")
+                Text("SIFU IOS")
                     .font(.system(size: 30, weight: .heavy))
                     .foregroundStyle(AppTheme.primaryText)
 

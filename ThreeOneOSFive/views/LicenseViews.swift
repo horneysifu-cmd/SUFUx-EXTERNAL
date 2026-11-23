@@ -99,7 +99,7 @@ private struct AppLaunchLoadingView: View {
             Color.black.ignoresSafeArea()
             FallingStarsBackground()
             VStack(spacing: 0) {
-                Text("ROBO EXTERNAL")
+                Text("SIFU x External")
                     .font(.system(size: 22, weight: .bold))
                     .foregroundStyle(Color.white)
                     .frame(maxWidth: .infinity)
@@ -164,11 +164,11 @@ struct LicenseActivationView: View {
     }
 
     private var header: some View {
-        Text("ROBO X LEE")
+        Text("SIFU IOS")
             .font(.system(size: 36, weight: .bold))
             .foregroundStyle(Color.white)
             .frame(maxWidth: .infinity)
-            .accessibilityLabel("ROBO X LEE")
+            .accessibilityLabel("SIFU IOS")
     }
 
     private var form: some View {
@@ -238,7 +238,7 @@ struct LicenseActivationView: View {
                 Text("No key? Contact your seller")
                     .font(.system(size: 13, weight: .semibold))
                     .foregroundStyle(AppTheme.secondaryText)
-                Text("This external is project of Robo Modes")
+                Text("This external is project of SIFU IOS")
                     .font(.system(size: 12, weight: .medium))
                     .foregroundStyle(AppTheme.tertiaryText)
             }
@@ -426,7 +426,7 @@ struct RequiredContentUpdateView: View {
                 ScrollView {
                     VStack(spacing: 36) {
                         Spacer(minLength: 48)
-                        Text("ROBO EXTERNAL")
+                        Text("SIFU x External")
                             .font(.system(size: 22, weight: .bold))
                             .foregroundStyle(Color.white)
                         releaseNotes

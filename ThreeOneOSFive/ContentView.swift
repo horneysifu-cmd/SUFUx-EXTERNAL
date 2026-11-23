@@ -22,7 +22,7 @@ struct ContentView: View {
     @AppStorage(AppTheme.appearanceStorageKey) private var appearance = AppTheme.defaultAppearance
     @State private var profileCountdownNow = Date()
     @State private var noticeMessage = "Stay connected and get the latest updates, news, and announcements right on your bot!"
-    @State private var noticeURL = URL(string: "https://t.me/roboiosbot")!
+    @State private var noticeURL = URL(string: "https://t.me/sifuGLOBAL")!
 
     private var busy: Bool { store.isBusy || controller.isWorking }
     private var items: [PatchLibraryItem] { store.items }
@@ -87,7 +87,7 @@ struct ContentView: View {
         .tint(AppTheme.accent)
 .preferredColorScheme(appearance == "light" ? .light : .dark)
         .alert(
-            "ROBO iOS",
+            "SIFU iOS",
             isPresented: Binding(
                 get: { controller.message != nil },
                 set: { if !$0 { controller.message = nil } }
@@ -510,7 +510,7 @@ struct ContentView: View {
             HStack(spacing: 14) {
                 AppLogo(size: 52)
                 VStack(alignment: .leading, spacing: 3) {
-                    Text("ROBO X LEE")
+                    Text("SIFU IOS")
                         .font(.system(size: 22, weight: .bold))
                         .foregroundStyle(AppTheme.primaryText)
                     Text(language.text("common.play_beyond_limits"))
@@ -576,7 +576,7 @@ struct ContentView: View {
                 VitaProfileRow(
                     icon: "info.circle.fill",
                     title: language.text("common.name"),
-                    value: "ROBO X LEE"
+                    value: "SIFU IOS"
                 )
                 VitaProfileRow(
                     icon: "square.stack.3d.up.fill",
@@ -667,7 +667,7 @@ struct ContentView: View {
             HStack(spacing: 14) {
                 AppLogo(size: 52)
                 VStack(alignment: .leading, spacing: 3) {
-                    Text("ROBO X LEE")
+                    Text("SIFU IOS")
                         .font(.system(size: 22, weight: .bold))
                         .foregroundStyle(AppTheme.primaryText)
                     Text(language.text("common.play_beyond_limits").uppercased())
@@ -682,16 +682,16 @@ struct ContentView: View {
                 VitaSectionHeader(title: "Contact")
                 VitaProfileCard {
                     infoLinkRow(
-                        title: "Telegram",
-                        subtitle: "Join our Telegram",
+                        title: "SIFU IOS",
+                        subtitle: "Personal Telegram",
                         icon: "paperplane.fill",
-                        url: "https://t.me/VITA_1280"
+                        url: "https://t.me/SIFU_IOS"
                     )
                     infoLinkRow(
                         title: "Channel",
                         subtitle: "Latest news & updates",
                         icon: "speaker.wave.2.fill",
-                        url: "https://t.me/vitamodvip"
+                        url: "https://t.me/sifuGLOBAL"
                     )
                     infoLinkRow(
                         title: "Website",

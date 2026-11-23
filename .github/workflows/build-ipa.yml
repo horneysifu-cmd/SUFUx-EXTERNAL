@@ -1,4 +1,4 @@
-name: Build ROBO iOS IPA
+name: Build SIFU iOS IPA
 on:
   workflow_dispatch:
   push:

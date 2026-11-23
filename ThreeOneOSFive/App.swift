@@ -33,7 +33,7 @@ struct RoboIOSApp: App {
             BundledFunctionCatalog.removeFactorySeedIfNeeded()
             RuntimeGuard.inspectLaunch()
         }
-        log("app: ROBO iOS launching")
+        log("app: SIFU iOS launching")
     }
 
     var body: some Scene {

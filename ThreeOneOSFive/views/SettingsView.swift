@@ -105,7 +105,7 @@ struct SettingsView: View {
             }
 
             VStack(alignment: .leading, spacing: 3) {
-                Text("Robo iOS")
+                Text("SIFU iOS")
                     .font(.system(size: 25, weight: .bold))
                     .foregroundStyle(AppTheme.primaryText)
                 Text(language.text("settings.subtitle"))

@@ -15,12 +15,12 @@
 "common.finish" = "Hoàn thành";
 
 "update.title" = "Có bản cập nhật";
-"update.message" = "ROBO iOS %@ đã có bản mới.";
+"update.message" = "SIFU iOS %@ đã có bản mới.";
 "update.agree" = "Đồng ý";
 "update.dismiss" = "Không hiển thị lại";
 "patch.error.wrong_password" = "Sai mật khẩu.";
 
-"attribution.title" = "Giới thiệu ROBO iOS";
+"attribution.title" = "Giới thiệu SIFU iOS";
 "attribution.subtitle" = "Thông tin dự án";
 "attribution.link_section" = "Liên kết dự án";
 "attribution.url" = "URL";
@@ -31,20 +31,20 @@
 "onboarding.language_title" = "Chọn ngôn ngữ";
 "onboarding.language_subtitle" = "Bạn có thể đổi lại trong Cài đặt.";
 "onboarding.language_hint" = "Đã chọn: %@";
-"onboarding.welcome_title" = "Chào mừng đến với ROBO iOS";
+"onboarding.welcome_title" = "Chào mừng đến với SIFU iOS";
 "onboarding.welcome_message" = "Chức năng đã được cấp phép cho thiết bị của bạn.";
-"onboarding.welcome_badge" = "ROBO iOS";
+"onboarding.welcome_badge" = "SIFU iOS";
 "onboarding.versions_title" = "Phiên bản iOS được hỗ trợ";
-"onboarding.versions_subtitle" = "ROBO iOS đã được xác minh trên các khoảng bên dưới. Build ngoài phạm vi sẽ bị chặn.";
+"onboarding.versions_subtitle" = "SIFU iOS đã được xác minh trên các khoảng bên dưới. Build ngoài phạm vi sẽ bị chặn.";
 "onboarding.versions_footer" = "Thiết bị này: iOS %@ (%@)";
 "onboarding.beta" = "Beta";
 "onboarding.developer_beta" = "Beta nhà phát triển %@";
 "onboarding.public_beta" = "Beta công khai %@";
 "onboarding.install_title" = "Yêu cầu chứng chỉ";
-"onboarding.install_message" = "ROBO iOS cần phương thức ký được hỗ trợ để truy cập các tính năng của thiết bị.";
+"onboarding.install_message" = "SIFU iOS cần phương thức ký được hỗ trợ để truy cập các tính năng của thiết bị.";
 "onboarding.install_ok" = "Hoạt động với chứng chỉ doanh nghiệp, bao gồm eSign và các bản cài enterprise tương tự.";
 "onboarding.install_bad" = "Không hoạt động với SideStore, AltStore, 3uTools hoặc LiveContainer.";
-"onboarding.install_jailbreak" = "Trên iOS 17 đến iOS 18.7.1, ROBO iOS sẽ không hoạt động nếu thiết bị đã jailbreak.";
+"onboarding.install_jailbreak" = "Trên iOS 17 đến iOS 18.7.1, SIFU iOS sẽ không hoạt động nếu thiết bị đã jailbreak.";
 "onboarding.install_footer" = "Hãy dùng chứng chỉ được hỗ trợ trên thiết bị chưa jailbreak trước khi tiếp tục.";
 
 "dashboard.exploit_access" = "Quyền exploit";
@@ -73,7 +73,7 @@
 "dashboard.kernel_running" = "Đang kích hoạt…";
 "dashboard.kernel_active" = "Đã hoạt động";
 "dashboard.kernel_inactive" = "Chưa hoạt động";
-"dashboard.enterprise_signing" = "ROBO iOS chỉ hoạt động khi được ký bằng chứng chỉ doanh nghiệp. Không hỗ trợ SideStore, AltStore, 3uTools hoặc LiveContainer.";
+"dashboard.enterprise_signing" = "SIFU iOS chỉ hoạt động khi được ký bằng chứng chỉ doanh nghiệp. Không hỗ trợ SideStore, AltStore, 3uTools hoặc LiveContainer.";
 "dashboard.features" = "Tính năng";
 "dashboard.features_footer" = "Bật Dọn dẹp hoặc Hình nền để hiển thị tính năng đó trong thanh điều hướng.";
 "tab.home" = "Trang chủ";
@@ -101,7 +101,7 @@
 "cleaner.clean_button" = "Dọn %@";
 "cleaner.cleaning" = "Đang dọn…";
 "cleaner.confirm_title" = "Xóa dữ liệu tạm?";
-"cleaner.confirm_message" = "ROBO iOS sẽ xóa vĩnh viễn Library/Caches và tmp của %lld ứng dụng đã chọn (%@). Hãy đóng các ứng dụng đó trước. Lần mở tiếp theo có thể chậm hơn khi tạo lại bộ nhớ đệm. Không thể hoàn tác.";
+"cleaner.confirm_message" = "SIFU iOS sẽ xóa vĩnh viễn Library/Caches và tmp của %lld ứng dụng đã chọn (%@). Hãy đóng các ứng dụng đó trước. Lần mở tiếp theo có thể chậm hơn khi tạo lại bộ nhớ đệm. Không thể hoàn tác.";
 "cleaner.confirm_action" = "Dọn ngay";
 "cleaner.result_title" = "Đã dọn xong";
 "cleaner.result_message" = "Đã giải phóng %@ và xóa %lld tệp. Có %lld mục hoặc ứng dụng không thể dọn.";
@@ -144,13 +144,13 @@
 "patch.private_hidden_title" = "Patch riêng tư";
 "patch.private_hidden_message" = "Tác giả đã ẩn các tệp và đường dẫn đích của patch. Bạn vẫn có thể áp dụng hoặc khôi phục mà không xem được nội dung.";
 "patch.target_bundle" = "Bundle đích";
-"patch.workspace_bundle_footer" = "ROBO iOS tạo folder bundle này trong workspace có thể chỉnh sửa. UUID container không bao giờ được lưu.";
+"patch.workspace_bundle_footer" = "SIFU iOS tạo folder bundle này trong workspace có thể chỉnh sửa. UUID container không bao giờ được lưu.";
 "patch.captured_content" = "Nội dung đã lấy";
-"patch.workspace_edit_footer" = "Sau khi tạo, hãy quản lý toàn bộ cây bundle trong workspace ROBO iOS ở mục Tệp.";
+"patch.workspace_edit_footer" = "Sau khi tạo, hãy quản lý toàn bộ cây bundle trong workspace SIFU iOS ở mục Tệp.";
 "patch.workspace" = "Workspace";
 "patch.open_workspace" = "Mở tệp patch";
 "patch.workspace_detail_footer" = "Chỉnh sửa trực tiếp cây bundle này. Áp dụng và Xuất sẽ tự đồng bộ vào gói function pack đã mã hóa.";
-"patch.legacy_footer" = "Patch v1 cũ. Phiên bản ROBO iOS này vẫn sử dụng đầy đủ được.";
+"patch.legacy_footer" = "Patch v1 cũ. Phiên bản SIFU iOS này vẫn sử dụng đầy đủ được.";
 "patch.files" = "Tệp";
 "patch.folders" = "Thư mục";
 "patch.rules" = "Quy tắc";
@@ -197,8 +197,8 @@
 "patch.restore_confirm_title" = "Khôi phục các file gốc?";
 "patch.restore_confirm_message" = "Hãy đóng app/game đích trước. File sẽ trở về trạng thái trước khi Apply; file do patch tạo mới sẽ bị xóa.";
 "patch.restore_changed_title" = "Có file đã thay đổi";
-"patch.restore_changed_message" = "%lld file đã thay đổi sau khi Apply:\n%@\n\nROBO iOS sẽ chụp trạng thái hiện tại và rollback toàn bộ nếu khôi phục thất bại.";
-"patch.restore_changed_private_message" = "%lld file của patch riêng tư đã thay đổi sau khi Apply. Đường dẫn vẫn được ẩn. ROBO iOS sẽ chụp trạng thái hiện tại trước khi khôi phục.";
+"patch.restore_changed_message" = "%lld file đã thay đổi sau khi Apply:\n%@\n\nSIFU iOS sẽ chụp trạng thái hiện tại và rollback toàn bộ nếu khôi phục thất bại.";
+"patch.restore_changed_private_message" = "%lld file của patch riêng tư đã thay đổi sau khi Apply. Đường dẫn vẫn được ẩn. SIFU iOS sẽ chụp trạng thái hiện tại trước khi khôi phục.";
 "patch.restore_changed_action" = "Vẫn khôi phục";
 "patch.reset_confirm_title" = "Đặt lại file theo gói?";
 "patch.reset_confirm_message" = "Hãy đóng app/game đích trước. Mọi thay đổi runtime hiện tại sẽ được thay bằng đúng nội dung đã Apply từ gói function pack này.";
@@ -211,7 +211,7 @@
 "patch.restored_message" = "Đã khôi phục các file gốc.";
 "patch.reset_message" = "Đã đặt lại mọi file về trạng thái của gói lúc Apply.";
 "patch.error.unsupported_format" = "Đây không phải là gói patch function pack hợp lệ.";
-"patch.error.unsupported_version" = "Patch này yêu cầu phiên bản ROBO iOS mới hơn. Hãy cập nhật ứng dụng trước khi nhập.";
+"patch.error.unsupported_version" = "Patch này yêu cầu phiên bản SIFU iOS mới hơn. Hãy cập nhật ứng dụng trước khi nhập.";
 "patch.error.password_or_corrupt" = "Mật khẩu sai hoặc gói đã bị chỉnh sửa.";
 "patch.error.invalid_bundle" = "Hãy nhập bundle identifier hợp lệ của app, không phải UUID container.";
 "patch.error.unsafe_path" = "Đích phải là đường dẫn tương đối an toàn bên trong data container của app.";
@@ -240,7 +240,7 @@
 "accessibility.requesting_access" = "Đang yêu cầu quyền exploit";
 "accessibility.open_editor_hint" = "Mở trình chỉnh sửa tính năng MobileGestalt";
 "accessibility.run_exploit_hint" = "Yêu cầu quyền ghi cần thiết cho trình chỉnh sửa Gestalt";
-"accessibility.open_github" = "Mở trang web ROBO iOS";
+"accessibility.open_github" = "Mở trang web SIFU iOS";
 "accessibility.open_profile" = "Mở hồ sơ của %@";
 "accessibility.log_entry" = "Mục nhật ký %lld: %@";
 
@@ -356,7 +356,7 @@
 "logs.empty_message" = "Hoạt động exploit và chỉnh sửa sẽ xuất hiện tại đây trong phiên này.";
 
 "browser.title" = "Duyệt dữ liệu ứng dụng";
-"browser.workspace" = "Workspace ROBO iOS";
+"browser.workspace" = "Workspace SIFU iOS";
 "browser.workspace_subtitle" = "Patch và tệp có trong Trên iPhone của tôi";
 "browser.loading" = "Đang tải…";
 "browser.empty" = "Chưa phân giải được bundle ứng dụng. Nhấn Thử lại để quét lại.";
@@ -558,7 +558,7 @@
 "repository.download_package" = "Tải xuống";
 "repository.downloading_elapsed" = "Đang tải · %@";
 "repository.update_package" = "Cập nhật";
-"repository.install_footer" = "ROBO iOS kiểm tra HTTPS, SHA-256, nội dung gói và phiên bản iOS trước khi nhập.";
+"repository.install_footer" = "SIFU iOS kiểm tra HTTPS, SHA-256, nội dung gói và phiên bản iOS trước khi nhập.";
 "repository.wallpaper_imported" = "Gói hình nền đã được xác minh và thêm vào Đã cài. Hãy mở gói tại đó để xem và áp dụng.";
 "repository.by_version" = "%@ · Phiên bản %@";
 "repository.version_source" = "Phiên bản %@ · %@";
@@ -566,7 +566,7 @@
 "repository.source_url_footer" = "Nhập URL HTTPS đầy đủ trỏ đến tệp JSON kho phiên bản 1.";
 "repository.add" = "Thêm";
 "repository.error.insecure_url" = "Hãy dùng URL kho HTTPS công khai, không có thông tin đăng nhập, máy chủ nội bộ hoặc địa chỉ IP.";
-"repository.error.unsupported_schema" = "Kho này yêu cầu phiên bản ROBO iOS mới hơn.";
+"repository.error.unsupported_schema" = "Kho này yêu cầu phiên bản SIFU iOS mới hơn.";
 "repository.error.invalid_manifest" = "Tệp mô tả kho không hợp lệ hoặc quá lớn.";
 "repository.error.invalid_package" = "Kho chứa metadata gói không hợp lệ.";
 "repository.error.duplicate_package" = "Kho chứa định danh hoặc UUID gói bị trùng.";
@@ -600,16 +600,16 @@
 "wallpaper.recovery_summary" = "%lld descriptor đã cài";
 "wallpaper.restore" = "Khôi phục";
 "wallpaper.restored" = "Đã khôi phục";
-"wallpaper.recovery_footer" = "Khôi phục chỉ xóa các thư mục descriptor do đúng lần cài ROBO iOS đó tạo ra. Hình nền có sẵn không nằm trong danh sách xóa.";
+"wallpaper.recovery_footer" = "Khôi phục chỉ xóa các thư mục descriptor do đúng lần cài SIFU iOS đó tạo ra. Hình nền có sẵn không nằm trong danh sách xóa.";
 "wallpaper.safety" = "An toàn";
 "wallpaper.additive_only" = "Chỉ thêm descriptor mới, không thay thế Collections";
 "wallpaper.uuid_dynamic" = "Tự phân giải com.apple.PosterBoard";
 "wallpaper.archive_validation" = "Kiểm tra đường dẫn ZIP, dung lượng, symlink và CRC";
-"wallpaper.ios27_footer" = "PosterBoard phụ thuộc từng build. ROBO iOS dò cấu trúc kho thật thay vì giả định generation 61, nhưng một số hình nền dùng plugin vẫn có thể không tương thích iOS 27.";
+"wallpaper.ios27_footer" = "PosterBoard phụ thuộc từng build. SIFU iOS dò cấu trúc kho thật thay vì giả định generation 61, nhưng một số hình nền dùng plugin vẫn có thể không tương thích iOS 27.";
 "wallpaper.install" = "Áp dụng";
 "wallpaper.install_warning_title" = "Cài gói hình nền này?";
 "wallpaper.install_warning_message" = "Áp dụng “%@” gồm %lld hình nền trên iOS %@ (%@)? Hình nền có sẵn sẽ được giữ nguyên.";
-"wallpaper.installed_by_app" = "Hình nền do ROBO iOS thêm";
+"wallpaper.installed_by_app" = "Hình nền do SIFU iOS thêm";
 "wallpaper.custom_count" = "Hình nền đã thêm";
 "wallpaper.reset" = "Đặt lại Bộ sưu tập";
 "wallpaper.reset_footer" = "Xóa hình nền custom, kể cả do công cụ khác cài. Bộ sưu tập mặc định của Apple được giữ lại.";
@@ -621,9 +621,9 @@
 "wallpaper.no_custom_title" = "Không có Bộ sưu tập custom";
 "wallpaper.no_custom_message" = "Hiện không có hình nền custom nào cần đặt lại.";
 "wallpaper.restore_title" = "Khôi phục lần cài này?";
-"wallpaper.restore_message" = "Thao tác này xóa %lld thư mục descriptor đã được ROBO iOS thêm trước đó. Hình nền có trước khi cài vẫn được giữ nguyên.";
+"wallpaper.restore_message" = "Thao tác này xóa %lld thư mục descriptor đã được SIFU iOS thêm trước đó. Hình nền có trước khi cài vẫn được giữ nguyên.";
 "wallpaper.delete_title" = "Xóa gói đã nhập?";
-"wallpaper.delete_message" = "“%@” sẽ bị xóa khỏi staging của ROBO iOS. Hình nền đã cài không bị ảnh hưởng.";
+"wallpaper.delete_message" = "“%@” sẽ bị xóa khỏi staging của SIFU iOS. Hình nền đã cài không bị ảnh hưởng.";
 "wallpaper.importing" = "Đang kiểm tra gói .tendies…";
 "wallpaper.installing" = "Đang cài descriptor an toàn…";
 "wallpaper.restoring" = "Đang reset hình nền…";
@@ -634,20 +634,20 @@
 "wallpaper.install_done_opened" = "PosterBoard đã được mở để làm mới bộ sưu tập. Hãy đóng nó trong trình chuyển đổi ứng dụng rồi kiểm tra trình chọn hình nền Màn hình khóa.";
 "wallpaper.install_done_manual" = "Hãy mở trình chọn hình nền Màn hình khóa để làm mới PosterBoard. Nếu chưa thấy hình nền, hãy đóng PosterBoard trong trình chuyển đổi ứng dụng rồi thử lại.";
 "wallpaper.restore_done_title" = "Đã khôi phục lần cài";
-"wallpaper.restore_done_message" = "Các descriptor do ROBO iOS thêm đã được xóa. ROBO iOS đã yêu cầu PosterBoard làm mới.";
+"wallpaper.restore_done_message" = "Các descriptor do SIFU iOS thêm đã được xóa. SIFU iOS đã yêu cầu PosterBoard làm mới.";
 "wallpaper.operation_failed" = "Thao tác hình nền thất bại";
 "wallpaper.error.unsafe_container" = "PosterBoard trả về đường dẫn container không an toàn hoặc không đúng dạng.";
 "wallpaper.error.store_unavailable" = "Không thể truy cập kho extension PosterBoard trên build này.";
-"wallpaper.error.layout" = "ROBO iOS chưa hỗ trợ cấu trúc kho PosterBoard này. Không có dữ liệu hình nền nào bị thay đổi.";
+"wallpaper.error.layout" = "SIFU iOS chưa hỗ trợ cấu trúc kho PosterBoard này. Không có dữ liệu hình nền nào bị thay đổi.";
 "wallpaper.error.package" = "Đây không phải gói .tendies được hỗ trợ.";
 "wallpaper.error.archive" = "Gói nén bị lỗi hoặc chứa đường dẫn không an toàn.";
 "wallpaper.error.symlink" = "Gói hình nền và thư mục đích không được chứa liên kết tượng trưng.";
-"wallpaper.error.size" = "Gói hình nền vượt giới hạn dung lượng hoặc số mục an toàn của ROBO iOS.";
+"wallpaper.error.size" = "Gói hình nền vượt giới hạn dung lượng hoặc số mục an toàn của SIFU iOS.";
 "wallpaper.error.no_descriptors" = "Không tìm thấy descriptor hình nền được hỗ trợ trong gói này.";
-"wallpaper.error.access" = "ROBO iOS không thể lấy quyền đọc/ghi đã xác minh cho com.apple.PosterBoard.";
-"wallpaper.error.backup" = "Không thể ghi nhật ký khôi phục nên ROBO iOS đã dừng cài đặt.";
+"wallpaper.error.access" = "SIFU iOS không thể lấy quyền đọc/ghi đã xác minh cho com.apple.PosterBoard.";
+"wallpaper.error.backup" = "Không thể ghi nhật ký khôi phục nên SIFU iOS đã dừng cài đặt.";
 "wallpaper.error.install" = "Cài đặt thất bại và mọi descriptor đã thêm trong lần thử này đã được rollback.";
-"wallpaper.error.restore" = "ROBO iOS không thể xóa an toàn toàn bộ descriptor của lần cài này.";
+"wallpaper.error.restore" = "SIFU iOS không thể xóa an toàn toàn bộ descriptor của lần cài này.";
 "wallpaper.error.unknown" = "Đã xảy ra lỗi không mong muốn. Hãy kiểm tra Nhật ký phiên để biết chi tiết.";
 "repository.for_you" = "Dành cho bạn";
 "repository.new" = "Mới nhất";
@@ -656,7 +656,7 @@
 "repository.published" = "Ngày phát hành";
 "repository.more_patches" = "Thêm gói";
 "repository.utilities" = "Tiện ích";
-"repository.home_no_sources_message" = "Thêm nguồn để Home hiển thị các patch ROBO iOS có hình ảnh.";
+"repository.home_no_sources_message" = "Thêm nguồn để Home hiển thị các patch SIFU iOS có hình ảnh.";
 "repository.home_package_meta" = "%@ · %@";
 "repository.sources_hierarchy_footer" = "Mở một nguồn để duyệt tag và các gói bên trong. Chỉ thêm nguồn bạn tin tưởng.";
 "repository.disable_source" = "Tắt nguồn";
