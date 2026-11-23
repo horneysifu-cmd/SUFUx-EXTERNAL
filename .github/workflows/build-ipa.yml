@@ -36,7 +36,7 @@ jobs:
           set -euo pipefail
           xcodebuild \
             -project ThreeOneOSFive.xcodeproj \
-            -target roboios \
+            -target SIFUIOS \
             -configuration Release \
             -sdk iphoneos \
             -xcconfig VitaLicensing.xcconfig \
@@ -46,28 +46,28 @@ jobs:
             build 2>&1 | tee build.log
 
       - name: Verify iOS 16 observation metadata in release executable
-        run: node checks/native/check-reflection.mjs build/Release-iphoneos/roboios.app/roboios
+        run: node checks/native/check-reflection.mjs build/Release-iphoneos/SIFUIOS.app/roboios
 
       - name: Package unsigned IPA
         shell: bash
         run: |
           set -euo pipefail
-          app="$PWD/build/Release-iphoneos/roboios.app"
+          app="$PWD/build/Release-iphoneos/SIFUIOS.app"
           test -d "$app"
-          test -f "$app/roboios"
+          test -f "$app/SIFUIOS"
           mkdir -p output/Payload
-          ditto "$app" output/Payload/roboios.app
+          ditto "$app" output/Payload/SIFUIOS.app
           cd output
-          zip -qry roboios-unsigned.ipa Payload
-          unzip -t roboios-unsigned.ipa
-          shasum -a 256 roboios-unsigned.ipa > SHA256SUMS.txt
+          zip -qry SIFU-IOS-unsigned.ipa Payload
+          unzip -t SIFU-IOS-unsigned.ipa
+          shasum -a 256 SIFU-IOS-unsigned.ipa > SHA256SUMS.txt
 
       - name: Upload IPA
         uses: actions/upload-artifact@v4
         with:
-          name: roboios-unsigned-IPA
+          name: SIFU-IOS-unsigned-IPA
           path: |
-            output/roboios-unsigned.ipa
+            output/SIFU-IOS-unsigned.ipa
             output/SHA256SUMS.txt
           if-no-files-found: error
 
