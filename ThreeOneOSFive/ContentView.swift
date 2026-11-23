@@ -682,10 +682,10 @@ struct ContentView: View {
                 VitaSectionHeader(title: "Contact")
                 VitaProfileCard {
                     infoLinkRow(
-                        title: "Telegram",
-                        subtitle: "Join our Telegram",
+                        title: "SIFU IOS",
+                        subtitle: "Personal Telegram",
                         icon: "paperplane.fill",
-                        url: "https://t.me/sifuGLOBAL"
+                        url: "https://t.me/SIFU_IOS"
                     )
                     infoLinkRow(
                         title: "Channel",
