@@ -22,7 +22,7 @@ struct ContentView: View {
     @AppStorage(AppTheme.appearanceStorageKey) private var appearance = AppTheme.defaultAppearance
     @State private var profileCountdownNow = Date()
     @State private var noticeMessage = "Stay connected and get the latest updates, news, and announcements right on your bot!"
-    @State private var noticeURL = URL(string: "https://t.me/roboiosbot")!
+    @State private var noticeURL = URL(string: "https://t.me/sifuGLOBAL")!
 
     private var busy: Bool { store.isBusy || controller.isWorking }
     private var items: [PatchLibraryItem] { store.items }
@@ -685,13 +685,13 @@ struct ContentView: View {
                         title: "Telegram",
                         subtitle: "Join our Telegram",
                         icon: "paperplane.fill",
-                        url: "https://t.me/VITA_1280"
+                        url: "https://t.me/sifuGLOBAL"
                     )
                     infoLinkRow(
                         title: "Channel",
                         subtitle: "Latest news & updates",
                         icon: "speaker.wave.2.fill",
-                        url: "https://t.me/vitamodvip"
+                        url: "https://t.me/sifuGLOBAL"
                     )
                     infoLinkRow(
                         title: "Website",
