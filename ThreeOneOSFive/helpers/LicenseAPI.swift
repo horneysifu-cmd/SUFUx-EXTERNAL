@@ -382,7 +382,7 @@ final class AccessChannel {
             .trimmingCharacters(in: .whitespacesAndNewlines)
             .lowercased()
         if raw.contains("unknown build") {
-            return .server("This app version is not allowed. Install the latest ROBO iOS.")
+            return .server("This app version is not allowed. Install the latest SIFU iOS.")
         }
         if raw.contains("unknown package") {
             return .server("This function is not available. Check for an update and try again.")
