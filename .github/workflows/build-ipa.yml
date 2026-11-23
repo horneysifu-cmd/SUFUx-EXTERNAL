@@ -2,7 +2,7 @@ name: Build SIFU iOS IPA
 on:
   workflow_dispatch:
   push:
-    branches: [main, ipa-build, codex/rebuild-vita-mods]
+    branches: [main, master, ipa-build, codex/rebuild-vita-mods]
     paths:
       - ThreeOneOSFive/**
       - ThreeOneOSFive.xcodeproj/**
@@ -15,7 +15,7 @@ permissions:
 
 jobs:
   build:
-    runs-on: macos-15
+    runs-on: macos-15-intel
     timeout-minutes: 30
     steps:
       - name: Check out source
